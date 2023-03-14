@@ -25,14 +25,14 @@ let errormsg = classes("errormsg");
 
 let form = element("form");
 
-function verify(elem,message,cnd){
+function verify(elemt,message,cnd){
     if(cnd){
-        elem.style.border = "2px solid red";
-        elem.setCustomValidity(message);
-        elem.reportValidity();
+        elemt.style.border = "2px solid red";
+        elemt.setCustomValidity(message);
+        elemt.reportValidity();
     }else{
-        elem.style.border = "2px solid green";
-        elem.setCustomValidity('');
+        elemt.style.border = "2px solid green";
+        elemt.setCustomValidity('');
 
     }
 }
@@ -45,10 +45,10 @@ function checkDOB(){
         return true;
     }
 }
-let message_name = "Username must be at least 3 characters long";
+let message_name = "Username must be at least 5 characters long";
 let message_email = "Email must be valid";
 let message_agree = "You must agree to the terms and conditions";
-let message_dob = "You age must be between 18 and 55 to continue";
+let message_dob = "You age must be between 18 and 50 to continue";
 
 username.addEventListener("input", (e) => {
     let cond_name = username.value.length < 3;
@@ -124,103 +124,3 @@ form.addEventListener("submit", (e) => {
 window.onload = (event) => {
     displayTable();
 };
-body{
-    background-color: #75afc2;
-    color: #0c0b0b;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 16px;
-    line-height: 1.42857143;
-    margin: 0;
-    align-items: center;
-}
-
-#main{
-    margin: 100px 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 500px;
-    width: 90%;
-}
-
-#main h1{
-    padding-top: 10px;
-    padding-left: 20px;
-    font-size: 42px;
-}
-
-#form-box{
-    background-color: rgb(221, 207, 216);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
-    border-radius: 30px;
-    height: 500px;
-    width: 500px;
-    box-shadow: rgba(18, 18, 35, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
-
-.inputs{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: left;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 30px;
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
-}
-.inputs input{
-    width: 240px;
-    height: 30px;
-    border: 0;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
-#agree{
-    padding-left: 20px;
-    padding-top: 20px;
-    font-size: 16px;
-}
-#agree input{
-    margin-top: 10px;
-    width: 20px;
-    height: 20px;
-    border: 1px solid rgb(137, 24, 24);
-    border-radius: 4px;
-}
-
-#submit{
-    margin-left: 280px;
-    margin-top: 10px;
-    font-size: 20px;
-    height: 50px;
-    width: 90px;
-    border: 0;
-    border-radius: 10px;
-    box-shadow: rgba(53, 53, 106, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
-
-#table-box{
-    margin : 0 20px;
-    background-color: rgb(168, 228, 89);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
-    border-radius:20px;
-    height: 500px;
-    width: 800px;
-    box-shadow: rgba(62, 172, 78, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
-
-td,th{
-    padding-left: 10px;
-    width: 100px;
-    text-align: left;
-}
